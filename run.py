@@ -3,6 +3,12 @@ import random
 import operator
 
 
+def user_input():
+    user_x = int(input("Range start value:"))
+    user_y = int(input("Range end value:"))
+    return user_x, user_y
+
+
 def random_range_number(x, y):
     """
     Accepts a number range input between two numbers from the uses and
@@ -31,9 +37,8 @@ def main():
     """
     This is the main function of that will run all the functions
     """
-    user_x = int(input("Range start value:"))
-    user_y = int(input("Range end value:"))
-    random_range_number(user_x, user_y)
+    user_input_x, user_input_y = user_input()
+    random_range_number(user_input_x, user_input_y)
 
 
 main()
