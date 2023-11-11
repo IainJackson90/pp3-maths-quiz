@@ -31,19 +31,20 @@ def data_validation(user_value_x, user_value_y):
             # invalid_data_type = user_input()
             # return invalid_data_type
     return True
+    
 
-# def random_range_number(x, y):
-#     """
-#     Accepts a number range input between two numbers from the uses and
-#     randomize them
-#     """
-#     value_x = x
-#     value_y = y
-#     print("Random x:")
-#     random_x = print(f"{random.randint(value_x, value_y)}")
-#     print("Random y:")
-#     random_y = print(f"{random.randint(value_x, value_y)}")
-#     return random_x, random_y
+def random_range_number(x, y):
+    """
+    Accepts a number range input between two numbers from the uses and
+    randomize them
+    """
+    value_x = x
+    value_y = y
+    print("Random x:")
+    random_x = print(f"{random.randint(value_x, value_y)}")
+    print("Random y:")
+    random_y = print(f"{random.randint(value_x, value_y)}")
+    return random_x, random_y
 
 
 def main():
@@ -51,9 +52,8 @@ def main():
     This is the main function of that will run all the functions
     """
     user_input_x, user_input_y = user_input()
-    x_print_test, y_print_test = data_validation(user_input_x, user_input_y)
-    print(x_print_test)
-    print(y_print_test)
+    x_range, y_range = data_validation(user_input_x, user_input_y)
+    random_numb_x, random_numb_y = random_range_number(x_range, y_range)
 
 
 main()
