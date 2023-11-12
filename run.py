@@ -103,24 +103,44 @@ def math_question(x, y, rand_op_str, op_func):
         except ValueError:
             print("Invalid input. Please enter a valid value.")
             continue
-    return True
+    return answer, user_answer
+    
 
+
+# def score(c_ans, u_ans, score_range):
+#     """
+#     Keeps track of the user score
+#     """
+#     score = 0
+#     new_score = score
+#     if c_ans == u_ans:
+#         score += 1
+#         print(f"Your score is {new_score} out of {score_range}")
+#     else:
+#         print(f"Your score is {new_score} out of {score_range}")
+
+    
 
 def main():
     """
     This is the main function of that will run all the functions
     """
     user_input_x, user_input_y = user_input()
+    x_range, y_range = data_validation(user_input_x, user_input_y)
+    main_score = 0
     for i in range(3):
-        x_range, y_range = data_validation(user_input_x, user_input_y)
         random_numb_x, random_numb_y = random_range_number(x_range, y_range)
         # print(f"random_numb_x: {random_numb_x}")
         # print(f"random_numb_y: {random_numb_y}")
         valuhate_x = int(random_numb_x)
         valuhate_y = int(random_numb_y)
         rand_op_str, op_func = random_opperator(valuhate_x)
-        math_question(valuhate_x, valuhate_y, rand_op_str, op_func)
-        # print(f"your score: {score}")
+        c_ans, u_ans = math_question(valuhate_x, valuhate_y, rand_op_str, op_func)
+        if c_ans == u_ans:
+            main_score += 1
+            print(f"main_score: {main_score}")
+        else:
+            print(f"main_score: {main_score}")
 
 
 main()
