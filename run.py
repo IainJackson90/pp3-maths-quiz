@@ -65,23 +65,29 @@ def random_opperator(x):
           "+": operator.add}
     if x == 0:
         op_pop = op.pop("/")
-        new_op = op
-        randomes = random.choice(list(new_op.keys()))
-        print(randomes)
-        print(new_op)
+        no_devide_op = op
+        randomes_no_devide = random.choice(list(no_devide_op.keys()))
+        print(randomes_no_devide)
+        print(no_devide_op)
         print(op_pop)
+    else:
+        devide_op = op
+        randomes_devide = random.choice(list(devide_op.keys()))
+        print(randomes_devide)
+        print(devide_op)
 
 
 def main():
     """
     This is the main function of that will run all the functions
     """
-    # user_input_x, user_input_y = user_input()
-    # x_range, y_range = data_validation(user_input_x, user_input_y)
-    # random_numb_x, random_numb_y = random_range_number(x_range, y_range)
-    # print(f"random_numb_x: {random_numb_x}")
+    user_input_x, user_input_y = user_input()
+    x_range, y_range = data_validation(user_input_x, user_input_y)
+    random_numb_x, random_numb_y = random_range_number(x_range, y_range)
+    print(f"random_numb_x: {random_numb_x}")
     # print(f"random_numb_y: {random_numb_y}")
-    random_opperator(0)
+    valuhate_x = int(random_numb_x)
+    random_opperator(valuhate_x)
 
 
 main()
