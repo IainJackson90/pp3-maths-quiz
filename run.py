@@ -5,8 +5,8 @@ import operator
 
 def user_input():
     """
-    Accepts a usser input and converts it to a integer values 
-    If the value is not numerical value ot integer it will 
+    Accepts a usser input and converts it to a integer values
+    If the value is not numerical value ot integer it will
     display a value error
     """
     try:
@@ -64,7 +64,7 @@ def random_opperator(x):
           "-": operator.sub,
           "+": operator.add}
     if x == 0:
-        op_pop = op.pop("/")
+        no_devide_op = op.pop("/")
         no_devide_op = op
         randomes_no_devide = random.choice(list(no_devide_op.keys()))
         operater_op_no_devide = op.get(randomes_no_devide)
@@ -86,10 +86,24 @@ def math_question(x, y, rand_op_str, op_func):
     Creates a Math equation and accepts a user input that
     evaluates wheter the user answer is right or wrong
     """
-    print(f"what is the answer of = {y} {rand_op_str} {x}")
-    # user_answer = float(input(" Your answer : "))
-    # answer = y op x
-    # print(f"This is the answer: {answer}")
+    while True:
+        try:
+            print(f"what is the answer of = {y} {rand_op_str} {x}")
+            user_answer = float(input(" Your answer : "))
+            answer = op_func(y, x)
+            print(f"This is the answer: {answer}")
+            if answer == user_answer:
+                print("Corect!")
+                # print(f"your score: {score}")
+                break
+            else:
+                print("Incorect!")
+                # print(f"your score: {score}")
+                break
+        except ValueError:
+            print("Invalid input. Please enter a valid value.")
+            continue
+    return True
 
 
 def main():
@@ -97,14 +111,16 @@ def main():
     This is the main function of that will run all the functions
     """
     user_input_x, user_input_y = user_input()
-    x_range, y_range = data_validation(user_input_x, user_input_y)
-    random_numb_x, random_numb_y = random_range_number(x_range, y_range)
-    # print(f"random_numb_x: {random_numb_x}")
-    # print(f"random_numb_y: {random_numb_y}")
-    valuhate_x = int(random_numb_x)
-    valuhate_y = int(random_numb_y)
-    rand_op_str, op_func = random_opperator(valuhate_x)
-    math_question(valuhate_x, valuhate_y, rand_op_str, op_func)
+    for i in range(3):
+        x_range, y_range = data_validation(user_input_x, user_input_y)
+        random_numb_x, random_numb_y = random_range_number(x_range, y_range)
+        # print(f"random_numb_x: {random_numb_x}")
+        # print(f"random_numb_y: {random_numb_y}")
+        valuhate_x = int(random_numb_x)
+        valuhate_y = int(random_numb_y)
+        rand_op_str, op_func = random_opperator(valuhate_x)
+        math_question(valuhate_x, valuhate_y, rand_op_str, op_func)
+        # print(f"your score: {score}")
 
 
 main()
