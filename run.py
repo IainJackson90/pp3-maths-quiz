@@ -12,11 +12,13 @@ def user_input():
     try:
         user_x = int(input("Range start value:"))
         user_y = int(input("Range end value:"))
+        number_of_rounds = int(input
+                               ("How many rounds would you like to play:"))
     except ValueError:
         print("Invalid input. Please enter a valid integer.")
         not_integer = user_input()
         return not_integer
-    return user_x, user_y
+    return user_x, user_y, number_of_rounds
 
 
 def data_validation(user_value_x, user_value_y):
@@ -104,7 +106,6 @@ def math_question(x, y, rand_op_str, op_func):
             print("Invalid input. Please enter a valid value.")
             continue
     return answer, user_answer
-    
 
 
 # def score(c_ans, u_ans, score_range):
@@ -119,28 +120,28 @@ def math_question(x, y, rand_op_str, op_func):
 #     else:
 #         print(f"Your score is {new_score} out of {score_range}")
 
-    
 
 def main():
     """
     This is the main function of that will run all the functions
     """
-    user_input_x, user_input_y = user_input()
+    user_input_x, user_input_y, number_of_rounds = user_input()
     x_range, y_range = data_validation(user_input_x, user_input_y)
     main_score = 0
-    for i in range(3):
+    for i in range(number_of_rounds):
         random_numb_x, random_numb_y = random_range_number(x_range, y_range)
         # print(f"random_numb_x: {random_numb_x}")
         # print(f"random_numb_y: {random_numb_y}")
         valuhate_x = int(random_numb_x)
         valuhate_y = int(random_numb_y)
         rand_op_str, op_func = random_opperator(valuhate_x)
-        c_ans, u_ans = math_question(valuhate_x, valuhate_y, rand_op_str, op_func)
+        c_ans, u_ans = math_question(
+            valuhate_x, valuhate_y, rand_op_str, op_func)
         if c_ans == u_ans:
             main_score += 1
-            print(f"main_score: {main_score}")
+            print(f"main_score: {main_score} out of {number_of_rounds}")
         else:
-            print(f"main_score: {main_score}")
+            print(f"main_score: {main_score}  out of {number_of_rounds} ")
 
 
 main()
