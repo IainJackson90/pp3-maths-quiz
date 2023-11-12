@@ -14,6 +14,7 @@ def user_input():
         user_y = int(input("Range end value:"))
         number_of_rounds = int(input
                                ("How many rounds would you like to play:"))
+        print("\n")
     except ValueError:
         print("Invalid input. Please enter a valid integer.")
         not_integer = user_input()
@@ -31,7 +32,7 @@ def data_validation(user_value_x, user_value_y):
             x = user_value_x
             y = user_value_y
             if y < x:
-                print("You need a number larger than your first value")
+                print("Range end value must be larger than range start value")
                 print("pleas try again\n")
                 y_biger_than_x = user_input()
                 return y_biger_than_x
@@ -39,8 +40,6 @@ def data_validation(user_value_x, user_value_y):
                 return x, y
         except ValueError as e:
             print(f"invalid data: {e}, pleas try again")
-            # invalid_data_type = user_input()
-            # return invalid_data_type
     return True
 
 
@@ -50,9 +49,7 @@ def random_range_number(x, y):
     randomize them
     """
     random_x = (f"{random.randint(x, y)}")
-    print(f"Random x: {random_x}")
     random_y = (f"{random.randint(x, y)}")
-    print(f"Random y: {random_y}")
     return random_x, random_y
 
 
@@ -70,16 +67,11 @@ def random_opperator(x):
         no_devide_op = op
         randomes_no_devide = random.choice(list(no_devide_op.keys()))
         operater_op_no_devide = op.get(randomes_no_devide)
-        print(randomes_no_devide)
-        # print(no_devide_op)
-        # print(op_pop)
         return randomes_no_devide, operater_op_no_devide
     else:
         devide_op = op
         randomes_devide = random.choice(list(devide_op.keys()))
         operater_op_devide = op.get(randomes_devide)
-        print(randomes_devide)
-        # print(devide_op)
         return randomes_devide, operater_op_devide
 
 
@@ -91,47 +83,32 @@ def math_question(x, y, rand_op_str, op_func):
     while True:
         try:
             print(f"what is the answer of = {y} {rand_op_str} {x}")
-            user_answer = float(input(" Your answer : "))
+            user_answer = float(input("Your answer : "))
             answer = op_func(y, x)
             print(f"This is the answer: {answer}")
             if answer == user_answer:
                 print("Corect!")
-                # print(f"your score: {score}")
                 break
             else:
                 print("Incorect!")
-                # print(f"your score: {score}")
                 break
         except ValueError:
             print("Invalid input. Please enter a valid value.")
+            print("\n")
             continue
     return answer, user_answer
-
-
-# def score(c_ans, u_ans, score_range):
-#     """
-#     Keeps track of the user score
-#     """
-#     score = 0
-#     new_score = score
-#     if c_ans == u_ans:
-#         score += 1
-#         print(f"Your score is {new_score} out of {score_range}")
-#     else:
-#         print(f"Your score is {new_score} out of {score_range}")
 
 
 def main():
     """
     This is the main function of that will run all the functions
+    Keeps score of the quizz
     """
     user_input_x, user_input_y, number_of_rounds = user_input()
-    x_range, y_range = data_validation(user_input_x, user_input_y)
+    x_range, y_range, n_rounds = data_validation(user_input_x, user_input_y)
     main_score = 0
     for i in range(number_of_rounds):
         random_numb_x, random_numb_y = random_range_number(x_range, y_range)
-        # print(f"random_numb_x: {random_numb_x}")
-        # print(f"random_numb_y: {random_numb_y}")
         valuhate_x = int(random_numb_x)
         valuhate_y = int(random_numb_y)
         rand_op_str, op_func = random_opperator(valuhate_x)
@@ -139,9 +116,11 @@ def main():
             valuhate_x, valuhate_y, rand_op_str, op_func)
         if c_ans == u_ans:
             main_score += 1
-            print(f"main_score: {main_score} out of {number_of_rounds}")
+            print(f"Your score is: {main_score} out of {number_of_rounds}")
+            print("\n")
         else:
-            print(f"main_score: {main_score}  out of {number_of_rounds} ")
+            print(f"Your score is: {main_score}  out of {number_of_rounds} ")
+            print("\n")
 
 
 main()
