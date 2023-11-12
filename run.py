@@ -67,14 +67,29 @@ def random_opperator(x):
         op_pop = op.pop("/")
         no_devide_op = op
         randomes_no_devide = random.choice(list(no_devide_op.keys()))
+        operater_op_no_devide = op.get(randomes_no_devide)
         print(randomes_no_devide)
-        print(no_devide_op)
-        print(op_pop)
+        # print(no_devide_op)
+        # print(op_pop)
+        return randomes_no_devide, operater_op_no_devide
     else:
         devide_op = op
         randomes_devide = random.choice(list(devide_op.keys()))
+        operater_op_devide = op.get(randomes_devide)
         print(randomes_devide)
-        print(devide_op)
+        # print(devide_op)
+        return randomes_devide, operater_op_devide
+
+
+def math_question(x, y, rand_op_str, op_func):
+    """
+    Creates a Math equation and accepts a user input that
+    evaluates wheter the user answer is right or wrong
+    """
+    print(f"what is the answer of = {y} {rand_op_str} {x}")
+    # user_answer = float(input(" Your answer : "))
+    # answer = y op x
+    # print(f"This is the answer: {answer}")
 
 
 def main():
@@ -84,10 +99,12 @@ def main():
     user_input_x, user_input_y = user_input()
     x_range, y_range = data_validation(user_input_x, user_input_y)
     random_numb_x, random_numb_y = random_range_number(x_range, y_range)
-    print(f"random_numb_x: {random_numb_x}")
+    # print(f"random_numb_x: {random_numb_x}")
     # print(f"random_numb_y: {random_numb_y}")
     valuhate_x = int(random_numb_x)
-    random_opperator(valuhate_x)
+    valuhate_y = int(random_numb_y)
+    rand_op_str, op_func = random_opperator(valuhate_x)
+    math_question(valuhate_x, valuhate_y, rand_op_str, op_func)
 
 
 main()
