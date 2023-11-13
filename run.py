@@ -121,6 +121,11 @@ def main():
       \___\_\  \__,_| |_| /___|   (_)
     """)
     print("\n")
+    print(r"""How to play: 1. Select a start value for a range of values
+             2. Slect a end value for the range of numbers
+             3. Select how many games you want to play
+             4. Test your math skils """)
+    print("\n")
     user_input_x, user_input_y, rounds = user_input()
     x_range, y_range, n_of_rounds = data_validation(user_input_x,
                                                     user_input_y, rounds)
