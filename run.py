@@ -8,7 +8,7 @@ import sys
 
 def user_input():
     """
-    Accepts a user input and converts it to a integer values
+    Accepts a user input and converts it to a integer value
     If the value is not numerical value or not integer it will
     display a value error
     """
@@ -40,7 +40,7 @@ def data_validation(user_value_x, user_value_y, rounds_playing):
                 print(text_colors.FAIL +
                       "Range end value must be larger than range start value"
                       + text_colors.ENDC)
-                print(text_colors.FAIL + "pleas try again\n"
+                print(text_colors.FAIL + "Please try again\n"
                       + text_colors.ENDC)
                 y_biger_than_x = user_input()
                 return y_biger_than_x
@@ -48,7 +48,7 @@ def data_validation(user_value_x, user_value_y, rounds_playing):
                 number_of_rounds = rounds_playing
                 return x, y, number_of_rounds
         except ValueError as e:
-            print(f"invalid data: {e}, pleas try again")
+            print(f"invalid data: {e}, please try again")
     return True
 
 
@@ -72,16 +72,16 @@ def random_opperator(x):
           "-": operator.sub,
           "+": operator.add}
     if x == 0:
-        no_devide_op = op.pop("/")
-        no_devide_op = op
-        randomes_no_devide = random.choice(list(no_devide_op.keys()))
-        operater_op_no_devide = op.get(randomes_no_devide)
-        return randomes_no_devide, operater_op_no_devide
+        no_divide_op = op.pop("/")
+        no_divide_op = op
+        randoms_no_divide = random.choice(list(no_divide_op.keys()))
+        operater_op_no_divide = op.get(randoms_no_divide)
+        return randoms_no_divide, operater_op_no_divide
     else:
-        devide_op = op
-        randomes_devide = random.choice(list(devide_op.keys()))
-        operater_op_devide = op.get(randomes_devide)
-        return randomes_devide, operater_op_devide
+        divide_op = op
+        randoms_divide = random.choice(list(divide_op.keys()))
+        operater_op_divide = op.get(randoms_divide)
+        return randoms_divide, operater_op_divide
 
 
 def math_question(x, y, rand_op_str, op_func):
@@ -91,8 +91,8 @@ def math_question(x, y, rand_op_str, op_func):
     """
     while True:
         try:
-            print(f"What is the answer of : {y} {rand_op_str} {x}")
-            user_answer = float(input("Your answer : "))
+            print(f"What is the answer of: {y} {rand_op_str} {x}")
+            user_answer = float(input("Your answer: "))
             answer = op_func(y, x)
             print(f"This is the answer: {answer}")
             if answer == user_answer:
@@ -161,17 +161,17 @@ def main():
     main_score = 0
     for i in range(n_of_rounds):
         random_numb_x, random_numb_y = random_range_number(x_range, y_range)
-        valuhate_x = int(random_numb_x)
-        valuhate_y = int(random_numb_y)
-        rand_op_str, op_func = random_opperator(valuhate_x)
+        valuate_x = int(random_numb_x)
+        valuate_y = int(random_numb_y)
+        rand_op_str, op_func = random_opperator(valuate_x)
         c_ans, u_ans = math_question(
-            valuhate_x, valuhate_y, rand_op_str, op_func)
+            valuate_x, valuate_y, rand_op_str, op_func)
         if c_ans == u_ans:
             main_score += 1
             type_writer(f"Your score is: {main_score} out of {n_of_rounds}")
             print("\n")
         else:
-            type_writer(f"Your score is: {main_score}  out of {n_of_rounds} ")
+            type_writer(f"Your score is: {main_score} out of {n_of_rounds}")
             print("\n")
 
 
