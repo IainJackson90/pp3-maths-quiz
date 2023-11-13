@@ -1,7 +1,9 @@
 import math
 import random
 import operator
-import time,os,sys
+import time
+import os
+import sys
 
 
 def user_input():
@@ -17,7 +19,9 @@ def user_input():
         n_rounds = int(input())
         print("\n")
     except ValueError:
-        print("Invalid input. Please enter a valid integer.")
+        print(text_colors.FAIL +
+              "Invalid input. Please enter a valid integer."
+              + text_colors.ENDC)
         not_integer = user_input()
         return not_integer
     return user_x, user_y, n_rounds
@@ -33,8 +37,11 @@ def data_validation(user_value_x, user_value_y, rounds_playing):
             x = user_value_x
             y = user_value_y
             if y < x:
-                print("Range end value must be larger than range start value")
-                print("pleas try again\n")
+                print(text_colors.FAIL +
+                      "Range end value must be larger than range start value"
+                      + text_colors.ENDC)
+                print(text_colors.FAIL + "pleas try again\n"
+                      + text_colors.ENDC)
                 y_biger_than_x = user_input()
                 return y_biger_than_x
             else:
@@ -89,50 +96,64 @@ def math_question(x, y, rand_op_str, op_func):
             answer = op_func(y, x)
             print(f"This is the answer: {answer}")
             if answer == user_answer:
-                print("Corect!")
+                print(text_colors.OKGREEN + "Corect!" + text_colors.ENDC)
                 break
             else:
-                print("Incorrect!")
+                print(text_colors.WARNING + "Incorrect!" + text_colors.ENDC)
                 break
         except ValueError:
-            print("Invalid input. Please enter a valid value.")
+            print(text_colors.FAIL +
+                  "Invalid input. Please enter a valid value."
+                  + text_colors.ENDC)
             print("\n")
             continue
     return answer, user_answer
-    
+
 
 def type_writer(text):
     for char in text:
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(0.01)
-    
+        time.sleep(0.02)
+
+
+class text_colors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 
 def main():
     """
     This is the main function of that will run all the functions
     Keeps score of the quizz
     """
-    type_writer(r"""
-      __  __           _     _       
-     |  \/  |         | |   | |      
-     | \  / |   __ _  | |_  | |__    
-     | |\/| |  / _` | | __| | '_ \   
-     | |  | | | (_| | | |_  | | | |  
-     |_|  |_|  \__,_|  \__| |_| |_|  
-                                                             
-       ____            _           _ 
+    type_writer(text_colors.OKBLUE + r"""
+      __  __           _     _
+     |  \/  |         | |   | |
+     | \  / |   __ _  | |_  | |__
+     | |\/| |  / _` | | __| | '_ \
+     | |  | | | (_| | | |_  | | | |
+     |_|  |_|  \__,_|  \__| |_| |_|
+
+       ____            _           _
       / __ \          (_)         | |
      | |  | |  _   _   _   ____   | |
      | |  | | | | | | | | |_  /   | |
      | |__| | | |_| | | |  / /    |_|
       \___\_\  \__,_| |_| /___|   (_)
-    """)
+    """ + text_colors.ENDC)
     print("\n")
     print(r"""How to play: 1. Select a start value for a range of values
-             2. Slect a end value for the range of numbers
+             2. Select a end value for the range of numbers
              3. Select how many games you want to play
-             4. Test your math skils """)
+             4. Test your math skills """)
     print("\n")
     user_input_x, user_input_y, rounds = user_input()
     x_range, y_range, n_of_rounds = data_validation(user_input_x,
@@ -147,10 +168,10 @@ def main():
             valuhate_x, valuhate_y, rand_op_str, op_func)
         if c_ans == u_ans:
             main_score += 1
-            print(f"Your score is: {main_score} out of {n_of_rounds}")
+            type_writer(f"Your score is: {main_score} out of {n_of_rounds}")
             print("\n")
         else:
-            print(f"Your score is: {main_score}  out of {n_of_rounds} ")
+            type_writer(f"Your score is: {main_score}  out of {n_of_rounds} ")
             print("\n")
 
 
