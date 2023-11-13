@@ -1,6 +1,7 @@
 import math
 import random
 import operator
+import time,os,sys
 
 
 def user_input():
@@ -98,14 +99,21 @@ def math_question(x, y, rand_op_str, op_func):
             print("\n")
             continue
     return answer, user_answer
+    
 
+def type_writer(text):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.01)
+    
 
 def main():
     """
     This is the main function of that will run all the functions
     Keeps score of the quizz
     """
-    print(r"""
+    type_writer(r"""
       __  __           _     _       
      |  \/  |         | |   | |      
      | \  / |   __ _  | |_  | |__    
