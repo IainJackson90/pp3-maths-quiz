@@ -15,8 +15,7 @@ def user_input():
     try:
         user_x = int(input("Range start value:"))
         user_y = int(input("Range end value:"))
-        print("How many rounds would you like to play:")
-        n_rounds = int(input())
+        n_rounds = int(input("How many rounds would you like to play:"))
         print("\n")
     except ValueError:
         print(text_colors.FAIL +
@@ -92,12 +91,12 @@ def math_question(x, y, rand_op_str, op_func):
     """
     while True:
         try:
-            print(f"what is the answer of = {y} {rand_op_str} {x}")
+            print(f"What is the answer of : {y} {rand_op_str} {x}")
             user_answer = float(input("Your answer : "))
             answer = op_func(y, x)
             print(f"This is the answer: {answer}")
             if answer == user_answer:
-                print(text_colors.OKGREEN + "Corect!" + text_colors.ENDC)
+                print(text_colors.OKGREEN + "Correct!" + text_colors.ENDC)
                 break
             else:
                 print(text_colors.WARNING + "Incorrect!" + text_colors.ENDC)
@@ -133,7 +132,7 @@ class text_colors:
 def main():
     """
     This is the main function that will run all the functions
-    Keeps score of the quizz
+    Keeps score of the quiz
     """
     type_writer(text_colors.OKBLUE + r"""
       __  __           _     _
