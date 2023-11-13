@@ -117,6 +117,25 @@ def type_writer(text):
         time.sleep(0.02)
 
 
+def restart():
+    """
+    Restart the game yes or no
+    """
+    print("Do you want to play again ?")
+    replay_game = str(input("'y' for Yes, 'n' for No: ")).lower()
+    print("\n")
+    if replay_game == "y":
+        main()
+    elif replay_game == "n":
+        type_writer(text_colors.OKBLUE + "Thank you for playing!"
+                    + text_colors.ENDC)
+        print("\n")
+    else:
+        print(text_colors.FAIL + "Invalid input" + text_colors.ENDC)
+        retry_game = restart()
+        return retry_game
+
+
 class text_colors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -173,6 +192,7 @@ def main():
         else:
             type_writer(f"Your score is: {main_score} out of {n_of_rounds}")
             print("\n")
+    restart()
 
 
 main()
