@@ -31,6 +31,7 @@ def data_validation(user_value_x, user_value_y, rounds_playing):
     """
     Validates the input from the user and making sure that the first
     value is not bigger than the second value
+    Promts the user how many rounds they would like to play
     """
     while True:
         try:
@@ -54,7 +55,7 @@ def data_validation(user_value_x, user_value_y, rounds_playing):
 
 def random_range_number(x, y):
     """
-    Accepts a number range input between two numbers from the uses and
+    Accepts a number range input between two numbers from the user and
     randomize them
     """
     random_x = (f"{random.randint(x, y)}")
@@ -131,7 +132,7 @@ class text_colors:
 
 def main():
     """
-    This is the main function of that will run all the functions
+    This is the main function that will run all the functions
     Keeps score of the quizz
     """
     type_writer(text_colors.OKBLUE + r"""
