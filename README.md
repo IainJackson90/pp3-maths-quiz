@@ -73,18 +73,33 @@ This is a flow chart about the logic of the WebApp
 ## Existing Features
 
 - The logo has a typewriter effect
+
+![Logo](./assets/docs/images/logo.png)
 - The score has a typewriter effect
-- The "Do you want to play gain" has a typewriter effect
+
+![Score](./assets/docs/images/score.png)
 - The WebApp is designed to prevent any unwanted input from the user that is not required and will prompt them to enter a valid input
+
+![Error](./assets/docs/images/error.png)
 - The WebApp will randomize math equations for the user as many as the amount of rounds the user wants to play
+
+![Random equation](./assets/docs/images/math-equation.png)
 - The math equations will be in the format of “y operator x”
-- Every random equation that is created the “x” value is evaluated first if x is 0 it will remove the option divide “/” from the random operators so you can not get a math equation that will divide by 0 for example “2 / 0”
+
+- Every random equation that is created the “x” value is evaluated first if x is 0 it will remove the option 
+divide “/” from the random operators so you can not get a math equation that will divide by 0 for example “2 / 0”
+
+-At the end of the round the user will be prompted if they would like to play again or not if they respond yes it will restart the game if they say no it will print "Thank you for playing" in blue with a typewriter effect
+
+![Play again](./assets/docs/images/play-again.png)
 
 ## Future Features
 
 Add a signup where there will be set range values with a timer to answer to answer the math equations that will display your score on a scoreboard so you can challenge your peers 
 
 # Testing
+
+I have noted and been advised i could work on my commit messages, to be more descriptive about what I have done and going forward i will work on that
 
 ## Known Bugs
 
