@@ -143,6 +143,27 @@ I used the CI Python Linter as a validator to validate the code and it is error 
 13. Once linked, select 'Automatic deploys from' or 'Manual Deploy'
 14. The app will now be hosted on Heroku.
 
+- ## _Cloning the GitHub repository_
+
+This will download a full copy to your desktop
+
+1. Log into GitHub
+2. Find the repository you wish to clone
+3. Find the green code button top right corner
+4. Select "Local", copy the HTTPS URL
+5. Go to Codeanywhere and navigate to "New Workspace"
+6. Paste the URL into the space provided
+7. Click "Create"
+
+- ## _Forking the GitHub repository_
+
+Will allow you to create a copy of the repository so changes can be made that will not affect the original repository.
+
+1. Log into GitHub
+2. Find the repository you wish to fork
+3. Find the "Fork" drop down in the top right corner second from last
+4. Select "Create"  
+
 # Technologies Used
 
 - [Codeanywhere](https://app.codeanywhere.com/) to write the code
