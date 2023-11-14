@@ -185,7 +185,7 @@ Will allow you to create a copy of the repository so changes can be made that wi
 - Slack community
 - [stackoverflow](https://stackoverflow.com/questions/26260950/how-can-i-randomly-choose-a-maths-operator-and-ask-recurring-maths-questions-wit ) guidence of project 
 - [w3schools](https://www.w3schools.com/python/trypython.asp?filename=demo_ref_random_randint) How "randit" works to create random values between a range of values
-- [101computing](https://freesnippingtool.com/download) how to create typewriter effect
+- [101computing](https://www.101computing.net/python-typing-text-effect/) how to create typewriter effect
 - [stackoverflow](https://freesnippingtool.com/download) how to create color text to improve UX
 
 
