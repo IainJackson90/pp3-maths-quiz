@@ -92,7 +92,7 @@ This is a flow chart about the logic of the WebApp
 - Every random equation that is created the “x” value is evaluated first if x is 0 it will remove the option 
 divide “/” from the random operators so you can not get a math equation that will divide by 0 for example “2 / 0”
 
-- The user will submit their answer and if it is correct it will show the answer below and "Correct!" in green with a score that increments out of how many rounds the user plays if it was the wrong answer the score won't increment and it will display "Incorrect!" in yellow
+- The user will submit their answer and if it is correct it will show the answer below and "Correct!" in green with a score that increments out of how many rounds the user plays, if it was the wrong answer the score won't increment and it will display "Incorrect!" in yellow
 
 ![Correct](./assets/docs/images/correct.png)
 ![Incorrect](./assets/docs/images/incorrect.png)
