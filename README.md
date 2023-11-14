@@ -13,7 +13,7 @@ This is a WebApp to improve your math skills
 
 # UX
 
-# User Stories
+## User Stories
 
 - First-time visitor
 
@@ -33,7 +33,7 @@ The Game will:
 - Ask the user what the answer is to the equation
 - Evaluate if the answer is correct
 - Increment the score if the answer was correct
-- after the rounds are complete prompt the user if they would like to play again
+- After the rounds are complete prompt the user if they would like to play again
 
 ## Structure
 The game will be structured with user experience in mind, it will have simple user prompts and guidance
@@ -67,8 +67,21 @@ Add a signup where there will be set range values with a timer to answer to answ
 # Testing
 
 ## Known Bugs
+A bug to me that I would like to work on is that it will ask the user range values and if the first value is larger than the second it will continue to ask how many rounds you would like to play, then evaluate the input of the range values only then and if it was incorrectly entered it will prompt you only then to try again with a valid input 
+
+I would like it evaluate the range values first then only ask how many rounds you would like to play
+
+The reason for this is that I only at a later stage thought it would be a good idea for the user to choose how many rounds they would like to play and had to change the functions to best suit this
+
+I am thinking of ways how to restructure the functions to do this evaluation in this order
 
 ## Fixed Bugs
+Creating the WebbApp I encountered a bug, the score would increment only once and not again there after 
+This would happen everytime a new equation was created 
+
+I have come to a conclusion this happens because the function to increment the score was in the loop of creating new math equations and that the loop will reset the score every time the loop would run 
+
+The solution i had for this is to loop some of the functions in the main function and let the score count be stored in a variable in the main function outside of the loop, that way the score would be accurately incremented
 
 ## Manual Testing
 
