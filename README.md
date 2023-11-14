@@ -3,7 +3,7 @@ This is a WebApp to improve your math skills
 ## [Click here to view website](https://maths-quiz-08c6a5ff7616.herokuapp.com/)
 
 
-![Am I Responsive]()
+![Am I Responsive](./assets/docs/amiresponsive.png)
 
 
 # How to play
@@ -49,15 +49,22 @@ The Game will:
 
 
 ## Structure
+The game will be structured with user experience in mind, it will have simple user prompts and guidance
 
 
-## Wireframe
+## Flow chart 
+This is a flow chart about the logic of the WebApp
 
 
-![Wireframe ]()
+![Flow chart ](./assets/docs/flow-chart.png)
 
 
 ## Color pallet of the App
+The logo of the WebApp is Blue
+Any invalid input will be display a error in red
+If the answer is correct it will display the word “Correct” in green
+If the answer is incorrect it will display the word “Incorrect” in yellow
+If you do not want to play again it will display “Thank you for playing!” in blue.
 
 
 # Features
