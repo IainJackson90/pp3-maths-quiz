@@ -108,7 +108,7 @@ Add a signup where there will be set range values with a timer to answer to answ
 
 # Testing
 
-I have noted and been advised i could work on my commit messages, to be more descriptive about what I have done and going forward i will work on that
+I have been advised I could work on my commit messages, to be more descriptive about what has been done, and going forward I will work on that
 
 ## Known Bugs
 
