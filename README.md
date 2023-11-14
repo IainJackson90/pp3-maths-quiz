@@ -78,16 +78,25 @@ This is a flow chart about the logic of the WebApp
 - The score has a typewriter effect
 
 ![Score](./assets/docs/images/score.png)
+
 - The WebApp is designed to prevent any unwanted input from the user that is not required and will prompt them to enter a valid input
 
 ![Error](./assets/docs/images/error.png)
+
 - The WebApp will randomize math equations for the user as many as the amount of rounds the user wants to play
 
 ![Random equation](./assets/docs/images/math-equation.png)
+
 - The math equations will be in the format of “y operator x”
 
 - Every random equation that is created the “x” value is evaluated first if x is 0 it will remove the option 
 divide “/” from the random operators so you can not get a math equation that will divide by 0 for example “2 / 0”
+
+- The user will submit their answer and if it is correct it will show the answer below and "Correct!" in green with a score that increments out of how many rounds the user plays if it was the wrong answer the score won't increment and it will display "Incorrect!" in yellow
+
+![Correct](./assets/docs/images/correct.png)
+![Incorrect](./assets/docs/images/incorrect.png)
+
 
 -At the end of the round the user will be prompted if they would like to play again or not if they respond yes it will restart the game if they say no it will print "Thank you for playing" in blue with a typewriter effect
 
