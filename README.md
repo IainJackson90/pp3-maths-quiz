@@ -51,7 +51,11 @@ This is a flow chart about the logic of the WebApp
 - If you do not want to play again it will display “Thank you for playing!” in blue.
 
 # Features
+
 ## Existing Features
+- The logo has a typewriter effect
+- The score has a typewriter effect
+- The "Do you want to play gain" has a typewriter effect
 - The WebApp is designed to prevent any unwanted input from the user that is not required and will prompt them to enter a valid input
 - The WebApp will randomize math equations for the user as many as the amount of rounds the user wants to play
 - The math equations will be in the format of “y operator x”
@@ -70,7 +74,16 @@ Add a signup where there will be set range values with a timer to answer to answ
 
 | What was tested | Result | Outcome |
 |:---:|:---:|:---:|
-|...|...|...|
+|Passed it a alphabetical value|Invalid input error|Works as intended|
+|Range start value highers than range end value|Prompt the user to enter a smaller start value than a end value|Works as intended|
+|Answer correct|Evaluation was correct and displayed in green "Correct!"|Works as intended|
+|Answer incorrect|Evaluation was correct and displayed in yellow "Incorrect!"|Works as intended|
+|Score|Increments when user gives the correct answer|Works as intended|
+|Do you want to play again|It restarts the game or ends it|Works as intended|
+|Range values|Gets random numbers from the range values|Works as intended|
+|Random operators|Gets random operators dependent on the value of "x"|Works as intended|
+
+![Manual Testing](./assets/docs/manual_testing.png)
 
 ## Validator Testing
 
